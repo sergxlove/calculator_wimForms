@@ -57,6 +57,7 @@ namespace calculatorwimForms {
 	private: System::Windows::Forms::Label^ label1;
 	private: int first_value = 0;
 	private: int second_value = 0;
+	private: char user_action = ' ';
 	protected:
 
 	private:
@@ -175,6 +176,7 @@ namespace calculatorwimForms {
 			this->button5->TabIndex = 7;
 			this->button5->Text = L"*";
 			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::check_action_click);
 			// 
 			// button6
 			// 
@@ -242,6 +244,7 @@ namespace calculatorwimForms {
 			this->button9->TabIndex = 11;
 			this->button9->Text = L"/";
 			this->button9->UseVisualStyleBackColor = false;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm::check_action_click);
 			// 
 			// button10
 			// 
@@ -309,6 +312,7 @@ namespace calculatorwimForms {
 			this->button13->TabIndex = 15;
 			this->button13->Text = L"-";
 			this->button13->UseVisualStyleBackColor = false;
+			this->button13->Click += gcnew System::EventHandler(this, &MyForm::check_action_click);
 			// 
 			// button14
 			// 
@@ -376,6 +380,7 @@ namespace calculatorwimForms {
 			this->button17->TabIndex = 19;
 			this->button17->Text = L"+";
 			this->button17->UseVisualStyleBackColor = false;
+			this->button17->Click += gcnew System::EventHandler(this, &MyForm::check_action_click);
 			// 
 			// button18
 			// 
@@ -469,6 +474,7 @@ namespace calculatorwimForms {
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm";
 			this->Text = L"Calculator";
+			this->Click += gcnew System::EventHandler(this, &MyForm::check_action_click);
 			this->ResumeLayout(false);
 
 		}
@@ -476,7 +482,20 @@ namespace calculatorwimForms {
 		
 	private: System::Void check_numbers_click(System::Object^ sender, System::EventArgs^ e) {
 		Button^ button = safe_cast<Button^>(sender);
-		label1->Text = button->Text;
+		if (label1->Text == "0")
+		{
+			label1->Text = button->Text;
+		}
+		else
+		{
+			label1->Text += button->Text;
+		}
+	}
+	private: System::Void check_action_click(System::Object^ sender, System::EventArgs^ e) {
+		Button^ button = safe_cast<Button^>(sender);
+		user_action = Convert::ToChar(button->Text);
+		first_value = Convert::ToInt32(label1->Text);
+		label1->Text = "0";
 	}
 };
 }
