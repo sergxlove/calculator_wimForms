@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cmath>
 namespace calculatorwimForms {
 
 	using namespace System;
@@ -102,7 +102,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::SystemColors::Window;
 			this->button1->Location = System::Drawing::Point(12, 433);
@@ -111,6 +111,7 @@ namespace calculatorwimForms {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"+/-";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// button2
 			// 
@@ -118,7 +119,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button2->FlatAppearance->BorderSize = 0;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button2->ForeColor = System::Drawing::SystemColors::Window;
 			this->button2->Location = System::Drawing::Point(127, 433);
@@ -135,7 +136,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button3->FlatAppearance->BorderSize = 0;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button3->ForeColor = System::Drawing::SystemColors::Window;
 			this->button3->Location = System::Drawing::Point(242, 433);
@@ -151,7 +152,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button4->FlatAppearance->BorderSize = 0;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button4->ForeColor = System::Drawing::SystemColors::Window;
 			this->button4->Location = System::Drawing::Point(357, 433);
@@ -160,6 +161,7 @@ namespace calculatorwimForms {
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"=";
 			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -167,7 +169,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button5->FlatAppearance->BorderSize = 0;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button5->ForeColor = System::Drawing::SystemColors::Window;
 			this->button5->Location = System::Drawing::Point(357, 362);
@@ -184,7 +186,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button6->FlatAppearance->BorderSize = 0;
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button6->ForeColor = System::Drawing::SystemColors::Window;
 			this->button6->Location = System::Drawing::Point(242, 362);
@@ -201,7 +203,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button7->FlatAppearance->BorderSize = 0;
 			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button7->ForeColor = System::Drawing::SystemColors::Window;
 			this->button7->Location = System::Drawing::Point(127, 362);
@@ -218,7 +220,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button8->FlatAppearance->BorderSize = 0;
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button8->ForeColor = System::Drawing::SystemColors::Window;
 			this->button8->Location = System::Drawing::Point(12, 362);
@@ -235,7 +237,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button9->FlatAppearance->BorderSize = 0;
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button9->ForeColor = System::Drawing::SystemColors::Window;
 			this->button9->Location = System::Drawing::Point(357, 291);
@@ -252,7 +254,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button10->FlatAppearance->BorderSize = 0;
 			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button10->ForeColor = System::Drawing::SystemColors::Window;
 			this->button10->Location = System::Drawing::Point(242, 291);
@@ -269,7 +271,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button11->FlatAppearance->BorderSize = 0;
 			this->button11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button11->ForeColor = System::Drawing::SystemColors::Window;
 			this->button11->Location = System::Drawing::Point(127, 291);
@@ -286,7 +288,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button12->FlatAppearance->BorderSize = 0;
 			this->button12->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button12->ForeColor = System::Drawing::SystemColors::Window;
 			this->button12->Location = System::Drawing::Point(12, 291);
@@ -303,7 +305,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button13->FlatAppearance->BorderSize = 0;
 			this->button13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button13->ForeColor = System::Drawing::SystemColors::Window;
 			this->button13->Location = System::Drawing::Point(356, 220);
@@ -320,7 +322,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button14->FlatAppearance->BorderSize = 0;
 			this->button14->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button14->ForeColor = System::Drawing::SystemColors::Window;
 			this->button14->Location = System::Drawing::Point(242, 220);
@@ -337,7 +339,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button15->FlatAppearance->BorderSize = 0;
 			this->button15->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button15->ForeColor = System::Drawing::SystemColors::Window;
 			this->button15->Location = System::Drawing::Point(126, 220);
@@ -354,7 +356,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button16->FlatAppearance->BorderSize = 0;
 			this->button16->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button16->ForeColor = System::Drawing::SystemColors::Window;
 			this->button16->Location = System::Drawing::Point(11, 220);
@@ -371,7 +373,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button17->FlatAppearance->BorderSize = 0;
 			this->button17->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button17->ForeColor = System::Drawing::SystemColors::Window;
 			this->button17->Location = System::Drawing::Point(357, 149);
@@ -388,7 +390,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button18->FlatAppearance->BorderSize = 0;
 			this->button18->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button18->ForeColor = System::Drawing::SystemColors::Window;
 			this->button18->Location = System::Drawing::Point(242, 149);
@@ -397,6 +399,7 @@ namespace calculatorwimForms {
 			this->button18->TabIndex = 18;
 			this->button18->Text = L"Sqrt";
 			this->button18->UseVisualStyleBackColor = false;
+			this->button18->Click += gcnew System::EventHandler(this, &MyForm::button18_Click);
 			// 
 			// button19
 			// 
@@ -404,7 +407,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button19->FlatAppearance->BorderSize = 0;
 			this->button19->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button19->ForeColor = System::Drawing::SystemColors::Window;
 			this->button19->Location = System::Drawing::Point(127, 149);
@@ -413,6 +416,7 @@ namespace calculatorwimForms {
 			this->button19->TabIndex = 17;
 			this->button19->Text = L"Pow";
 			this->button19->UseVisualStyleBackColor = false;
+			this->button19->Click += gcnew System::EventHandler(this, &MyForm::button19_Click);
 			// 
 			// button20
 			// 
@@ -420,7 +424,7 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button20->FlatAppearance->BorderSize = 0;
 			this->button20->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button20->ForeColor = System::Drawing::SystemColors::Window;
 			this->button20->Location = System::Drawing::Point(12, 149);
@@ -429,6 +433,7 @@ namespace calculatorwimForms {
 			this->button20->TabIndex = 16;
 			this->button20->Text = L"C";
 			this->button20->UseVisualStyleBackColor = false;
+			this->button20->Click += gcnew System::EventHandler(this, &MyForm::button20_Click);
 			// 
 			// label1
 			// 
@@ -474,7 +479,6 @@ namespace calculatorwimForms {
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm";
 			this->Text = L"Calculator";
-			this->Click += gcnew System::EventHandler(this, &MyForm::check_action_click);
 			this->ResumeLayout(false);
 
 		}
@@ -493,9 +497,77 @@ namespace calculatorwimForms {
 	}
 	private: System::Void check_action_click(System::Object^ sender, System::EventArgs^ e) {
 		Button^ button = safe_cast<Button^>(sender);
+		if (user_action == ' ')
+		{
 		user_action = Convert::ToChar(button->Text);
 		first_value = Convert::ToInt32(label1->Text);
 		label1->Text = "0";
+		}
+		else
+		{
+			user_action = Convert::ToChar(button->Text); 
+			second_value = Convert::ToInt32(label1->Text);
+			if (user_action == '+')
+			{
+				first_value += second_value;
+				label1->Text = "0";
+			}
+			if (user_action == '-')
+			{
+				first_value -= second_value;
+				label1->Text = "0";
+			}
+			if (user_action == '/')
+			{
+				first_value /= second_value;
+				label1->Text = "0";
+			}
+			if (user_action == '*')
+			{
+				first_value *= second_value;
+				label1->Text = "0";
+			}
+		}
 	}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	second_value = Convert::ToInt32(label1->Text);
+	if (user_action == '+')
+	{
+		first_value += second_value;
+	}
+	if (user_action == '-')
+	{
+		first_value -= second_value;
+	}
+	if (user_action == '/')
+	{
+		first_value /= second_value;
+	}
+	if (user_action == '*')
+	{
+		first_value *= second_value;
+	}
+	label1->Text = Convert::ToString(first_value);
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	int value = Convert::ToInt32(label1->Text);
+	value *= -1;
+	label1->Text = Convert::ToString(value);
+}
+private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
+	int value = Convert::ToInt32(label1->Text);
+	value /= 10;
+	label1->Text = Convert::ToString(value);
+}
+private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
+	int value = Convert::ToInt32(label1->Text);
+	value = pow(value, 2);
+	label1->Text = Convert::ToString(value);
+}
+private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
+	int value = Convert::ToInt32(label1->Text);
+	value = sqrt(value);
+	label1->Text = Convert::ToString(value);
+}
 };
 }
