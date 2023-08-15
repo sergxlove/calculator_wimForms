@@ -62,6 +62,7 @@ namespace calculatorwimForms {
 	private: bool var_clear = false;
 	private: double first_value_double = 0;
 	private: double second_value_double = 0;
+	private: int count = 0;
 	protected:
 
 	private:
@@ -518,7 +519,8 @@ namespace calculatorwimForms {
 			}
 			else
 			{
-
+				first_value_double = Convert::ToDouble(label1->Text);
+				count = 0;
 			}
 		}
 		catch (...)
@@ -534,32 +536,61 @@ namespace calculatorwimForms {
 			try
 			{
 				user_action = Convert::ToChar(button->Text);
-				second_value = Convert::ToInt64(label1->Text);
-				if (user_action == '+')
+				if (var_double == false)
 				{
-					first_value += second_value;
-					label1->Text = "0";
+					second_value = Convert::ToInt64(label1->Text);
+					if (user_action == '+')
+					{
+						first_value += second_value;
+						label1->Text = "0";
+					}
+					if (user_action == '-')
+					{
+						first_value -= second_value;
+						label1->Text = "0";
+					}
+					if (user_action == '/')
+					{
+						first_value /= second_value;
+						label1->Text = "0";
+					}
+					if (user_action == '*')
+					{
+						first_value *= second_value;
+						label1->Text = "0";
+					}
 				}
-				if (user_action == '-')
+				else
 				{
-					first_value -= second_value;
-					label1->Text = "0";
-				}
-				if (user_action == '/')
-				{
-					first_value /= second_value;
-					label1->Text = "0";
-				}
-				if (user_action == '*')
-				{
-					first_value *= second_value;
-					label1->Text = "0";
+					second_value_double = Convert::ToDouble(label1->Text);
+					if (user_action == '+')
+					{
+						first_value_double += second_value_double;
+						label1->Text = "0";
+					}
+					if (user_action == '-')
+					{
+						first_value_double -= second_value_double;
+						label1->Text = "0";
+					}
+					if (user_action == '/')
+					{
+						first_value_double /= second_value_double;
+						label1->Text = "0";
+					}
+					if (user_action == '*')
+					{
+						first_value_double *= second_value_double;
+						label1->Text = "0";
+					}
+					count = 0;
 				}
 			}
 			catch (...)
 			{
 				MessageBox::Show(this, "слишком большое число", "error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				second_value = 0;
+				second_value_double = 0;
 				user_action = ' ';
 				label1->Text = "0";
 			}
@@ -568,25 +599,51 @@ namespace calculatorwimForms {
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	try
 	{
-		second_value = Convert::ToInt64(label1->Text);
-		if (user_action == '+')
+		if (var_double == false)
 		{
-			first_value += second_value;
+			second_value = Convert::ToInt64(label1->Text);
+			if (user_action == '+')
+			{
+				first_value += second_value;
+			}
+			if (user_action == '-')
+			{
+				first_value -= second_value;
+			}
+			if (user_action == '/')
+			{
+				first_value /= second_value;
+			}
+			if (user_action == '*')
+			{
+				first_value *= second_value;
+			}
+			label1->Text = Convert::ToString(first_value);
 		}
-		if (user_action == '-')
+		else
 		{
-			first_value -= second_value;
-		}
-		if (user_action == '/')
-		{
-			first_value /= second_value;
-		}
-		if (user_action == '*')
-		{
-			first_value *= second_value;
+			second_value_double = Convert::ToDouble(label1->Text);
+			if (user_action == '+')
+			{
+				first_value_double += second_value_double;
+			}
+			if (user_action == '-')
+			{
+				first_value_double -= second_value_double;
+			}
+			if (user_action == '/')
+			{
+				first_value_double /= second_value_double;
+			}
+			if (user_action == '*')
+			{
+				first_value_double *= second_value_double;
+			}
+			label1->Text = Convert::ToString(first_value_double);
+			var_double = false;
+			count = 0;
 		}
 		user_action = ' ';
-		label1->Text = Convert::ToString(first_value);
 		button20->Text = "AC";
 		var_clear = true;
 	}
@@ -594,6 +651,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		MessageBox::Show(this, "слишком большое число", "error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		second_value = 0;
+		second_value_double = 0;
 		user_action = ' ';
 		label1->Text = "0";
 	}
@@ -617,7 +675,6 @@ private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ 
 	{
 		if (var_double == true)
 		{
-		
 			label1->Text = "0";
 		}
 		else
@@ -666,10 +723,11 @@ private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ 
 	}
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (var_double == false)
+	if (count == 0)
 	{
 		label1->Text += ",";
 		var_double = true;
+		count++;
 	}
 }
 };
