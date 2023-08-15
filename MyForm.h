@@ -58,6 +58,11 @@ namespace calculatorwimForms {
 	private: int first_value = 0;
 	private: int second_value = 0;
 	private: char user_action = ' ';
+	private: bool var_double = false;
+	private: bool var_clear = false;
+	private: double first_value_double = 0;
+	private: double second_value_double = 0;
+	private: int count = 0;
 	protected:
 
 	private:
@@ -145,6 +150,7 @@ namespace calculatorwimForms {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L",";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button4
 			// 
@@ -152,9 +158,10 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button4->FlatAppearance->BorderSize = 0;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button4->ForeColor = System::Drawing::SystemColors::Window;
+			this->button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(36)));
 			this->button4->Location = System::Drawing::Point(357, 433);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(109, 65);
@@ -169,9 +176,10 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button5->FlatAppearance->BorderSize = 0;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button5->ForeColor = System::Drawing::SystemColors::Window;
+			this->button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(36)));
 			this->button5->Location = System::Drawing::Point(357, 362);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(109, 65);
@@ -237,9 +245,10 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button9->FlatAppearance->BorderSize = 0;
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button9->ForeColor = System::Drawing::SystemColors::Window;
+			this->button9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(36)));
 			this->button9->Location = System::Drawing::Point(357, 291);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(109, 65);
@@ -305,9 +314,10 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button13->FlatAppearance->BorderSize = 0;
 			this->button13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button13->ForeColor = System::Drawing::SystemColors::Window;
+			this->button13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(36)));
 			this->button13->Location = System::Drawing::Point(356, 220);
 			this->button13->Name = L"button13";
 			this->button13->Size = System::Drawing::Size(109, 65);
@@ -373,9 +383,10 @@ namespace calculatorwimForms {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->button17->FlatAppearance->BorderSize = 0;
 			this->button17->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button17->ForeColor = System::Drawing::SystemColors::Window;
+			this->button17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(140)),
+				static_cast<System::Int32>(static_cast<System::Byte>(36)));
 			this->button17->Location = System::Drawing::Point(357, 149);
 			this->button17->Name = L"button17";
 			this->button17->Size = System::Drawing::Size(109, 65);
@@ -439,7 +450,7 @@ namespace calculatorwimForms {
 			// 
 			this->label1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(69)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label1->ForeColor = System::Drawing::SystemColors::Window;
 			this->label1->Location = System::Drawing::Point(12, 19);
@@ -500,74 +511,224 @@ namespace calculatorwimForms {
 		if (user_action == ' ')
 		{
 		user_action = Convert::ToChar(button->Text);
-		first_value = Convert::ToInt32(label1->Text);
+		try
+		{
+			if (var_double == false)
+			{
+				first_value = Convert::ToInt64(label1->Text);
+			}
+			else
+			{
+				first_value_double = Convert::ToDouble(label1->Text);
+				count = 0;
+			}
+		}
+		catch (...)
+		{
+			MessageBox::Show(this, "слишком большое число", "error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			first_value = 0;
+			user_action = ' ';
+		}
 		label1->Text = "0";
 		}
 		else
 		{
-			user_action = Convert::ToChar(button->Text); 
-			second_value = Convert::ToInt32(label1->Text);
-			if (user_action == '+')
+			try
 			{
-				first_value += second_value;
-				label1->Text = "0";
+				user_action = Convert::ToChar(button->Text);
+				if (var_double == false)
+				{
+					second_value = Convert::ToInt64(label1->Text);
+					if (user_action == '+')
+					{
+						first_value += second_value;
+						label1->Text = "0";
+					}
+					if (user_action == '-')
+					{
+						first_value -= second_value;
+						label1->Text = "0";
+					}
+					if (user_action == '/')
+					{
+						first_value /= second_value;
+						label1->Text = "0";
+					}
+					if (user_action == '*')
+					{
+						first_value *= second_value;
+						label1->Text = "0";
+					}
+				}
+				else
+				{
+					second_value_double = Convert::ToDouble(label1->Text);
+					if (user_action == '+')
+					{
+						first_value_double += second_value_double;
+						label1->Text = "0";
+					}
+					if (user_action == '-')
+					{
+						first_value_double -= second_value_double;
+						label1->Text = "0";
+					}
+					if (user_action == '/')
+					{
+						first_value_double /= second_value_double;
+						label1->Text = "0";
+					}
+					if (user_action == '*')
+					{
+						first_value_double *= second_value_double;
+						label1->Text = "0";
+					}
+					count = 0;
+				}
 			}
-			if (user_action == '-')
+			catch (...)
 			{
-				first_value -= second_value;
-				label1->Text = "0";
-			}
-			if (user_action == '/')
-			{
-				first_value /= second_value;
-				label1->Text = "0";
-			}
-			if (user_action == '*')
-			{
-				first_value *= second_value;
+				MessageBox::Show(this, "слишком большое число", "error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				second_value = 0;
+				second_value_double = 0;
+				user_action = ' ';
 				label1->Text = "0";
 			}
 		}
 	}
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	second_value = Convert::ToInt32(label1->Text);
-	if (user_action == '+')
+	try
 	{
-		first_value += second_value;
+		if (var_double == false)
+		{
+			second_value = Convert::ToInt64(label1->Text);
+			if (user_action == '+')
+			{
+				first_value += second_value;
+			}
+			if (user_action == '-')
+			{
+				first_value -= second_value;
+			}
+			if (user_action == '/')
+			{
+				first_value /= second_value;
+			}
+			if (user_action == '*')
+			{
+				first_value *= second_value;
+			}
+			label1->Text = Convert::ToString(first_value);
+		}
+		else
+		{
+			second_value_double = Convert::ToDouble(label1->Text);
+			if (user_action == '+')
+			{
+				first_value_double += second_value_double;
+			}
+			if (user_action == '-')
+			{
+				first_value_double -= second_value_double;
+			}
+			if (user_action == '/')
+			{
+				first_value_double /= second_value_double;
+			}
+			if (user_action == '*')
+			{
+				first_value_double *= second_value_double;
+			}
+			label1->Text = Convert::ToString(first_value_double);
+			var_double = false;
+			count = 0;
+		}
+		user_action = ' ';
+		button20->Text = "AC";
+		var_clear = true;
 	}
-	if (user_action == '-')
+	catch (...)
 	{
-		first_value -= second_value;
+		MessageBox::Show(this, "слишком большое число", "error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		second_value = 0;
+		second_value_double = 0;
+		user_action = ' ';
+		label1->Text = "0";
 	}
-	if (user_action == '/')
-	{
-		first_value /= second_value;
-	}
-	if (user_action == '*')
-	{
-		first_value *= second_value;
-	}
-	label1->Text = Convert::ToString(first_value);
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	int value = Convert::ToInt32(label1->Text);
-	value *= -1;
-	label1->Text = Convert::ToString(value);
+	if (var_double == true)
+	{
+		double value = Convert::ToDouble(label1->Text);
+		value *= -1;
+		label1->Text = Convert::ToString(value);
+	}
+	else
+	{
+		int value = Convert::ToInt64(label1->Text);
+		value *= -1;
+		label1->Text = Convert::ToString(value);
+	}
 }
 private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
-	int value = Convert::ToInt32(label1->Text);
-	value /= 10;
-	label1->Text = Convert::ToString(value);
+	if (var_clear == false)
+	{
+		if (var_double == true)
+		{
+			label1->Text = "0";
+		}
+		else
+		{
+			int value = Convert::ToInt64(label1->Text);
+			value /= 10;
+			label1->Text = Convert::ToString(value);
+		}
+	}
+	else
+	{
+		first_value = 0;
+		second_value = 0;
+		user_action = ' ';
+		var_clear = false;
+		button20->Text = "C";
+		label1->Text = "0";
+	}
 }
 private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
-	int value = Convert::ToInt32(label1->Text);
-	value = pow(value, 2);
-	label1->Text = Convert::ToString(value);
+	if (var_double == true)
+	{
+		double value = Convert::ToDouble(label1->Text);
+		value = pow(value, 2);
+		label1->Text = Convert::ToString(value);
+	}
+	else
+	{
+		int value = Convert::ToInt64(label1->Text);
+		value = pow(value, 2);
+		label1->Text = Convert::ToString(value);
+	}
 }
 private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
-	int value = Convert::ToInt32(label1->Text);
-	value = sqrt(value);
-	label1->Text = Convert::ToString(value);
+	if (var_double == true)
+	{
+		double value = Convert::ToDouble(label1->Text);
+		value = sqrt(value);
+		label1->Text = Convert::ToString(value);
+	}
+	else
+	{
+		int value = Convert::ToInt64(label1->Text);
+		value = sqrt(value);
+		label1->Text = Convert::ToString(value);
+	}
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (count == 0)
+	{
+		label1->Text += ",";
+		var_double = true;
+		count++;
+	}
 }
 };
 }
