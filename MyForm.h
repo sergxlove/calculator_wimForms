@@ -494,7 +494,7 @@ namespace calculatorwimForms {
 
 		}
 #pragma endregion
-		
+	//метод для вннесения нажатой цыфры в итоговое число для математических операций
 	private: System::Void check_numbers_click(System::Object^ sender, System::EventArgs^ e) {
 		Button^ button = safe_cast<Button^>(sender);
 		if (label1->Text == "0")
@@ -506,6 +506,7 @@ namespace calculatorwimForms {
 			label1->Text += button->Text;
 		}
 	}
+	//метод определяющий математическое действие выбранное пользователем и выпонение операции при введении больше 2 чисел
 	private: System::Void check_action_click(System::Object^ sender, System::EventArgs^ e) {
 		Button^ button = safe_cast<Button^>(sender);
 		if (user_action == ' ')
@@ -596,6 +597,7 @@ namespace calculatorwimForms {
 			}
 		}
 	}
+	//метод для выполнения математической операции
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	try
 	{
@@ -656,6 +658,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		label1->Text = "0";
 	}
 }
+	//метод позволяющий работать с отрицательными числами
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (var_double == true)
 	{
@@ -670,6 +673,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		label1->Text = Convert::ToString(value);
 	}
 }
+	//метод очищающий все числа введенные пользователем
 private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (var_clear == false)
 	{
@@ -694,6 +698,7 @@ private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ 
 		label1->Text = "0";
 	}
 }
+	//метод для возведения числа в квадрат
 private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (var_double == true)
 	{
@@ -708,6 +713,7 @@ private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ 
 		label1->Text = Convert::ToString(value);
 	}
 }
+	//метод для нахождения корня числа
 private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (var_double == true)
 	{
@@ -722,6 +728,7 @@ private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ 
 		label1->Text = Convert::ToString(value);
 	}
 }
+	//метод для работы с дробными числами
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (count == 0)
 	{
