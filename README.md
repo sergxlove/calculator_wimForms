@@ -5,8 +5,11 @@
 ![Static Badge](https://img.shields.io/badge/version-1.0-orange)
 ![Static Badge](https://img.shields.io/badge/developer-sergxlove-green)
 
-
 ## About / О проекте
+
+![screenshot_calculator](https://github.com/sergxlove/calculator_wimForms/assets/135740568/705017b0-b51c-4284-92f3-2526c1f042cb)
+
+
 
 RU: Простой калькулятор для windows, поддерживаемые функции: сложение, вычитание, умножкние, деление, возведение в квадрат, нахождение корня. Также есть возможность работать с дробными и отрицательными числами.
 EN: A simple calculator for Windows, supported functions: addition, subtraction, multiplication, division, squaring, finding the root. It is also possible to work with fractional and negative numbers.
