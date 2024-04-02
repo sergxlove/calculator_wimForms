@@ -710,7 +710,7 @@ private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ 
 	{
 		int value = Convert::ToInt64(label1->Text);
 		value = pow(value, 2);
-		label1->Text = Convert::ToString(value);
+		label1->Text = Convert::ToString(value); 
 	}
 }
 	//метод для нахождения корня числа
