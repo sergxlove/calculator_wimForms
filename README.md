@@ -7,7 +7,7 @@
 
 ## About / О проекте
 
-![screenshot_calculator](https://github.com/sergxlove/calculator_wimForms/assets/135740568/705017b0-b51c-4284-92f3-2526c1f042cb)
+![screenshot_calculator](https://github.com/sergxlove/calculator_wimForms/blob/master/screenshotes/Снимок%20экрана%202024-04-02%20154234.png) 
 
 
 
